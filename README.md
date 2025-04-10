@@ -1,71 +1,118 @@
-# Asteroid Prediction
+#  Asteroid Collision and Impact Prediction using Machine Learning
 
-## Overview
+> A machine learning-based predictive system to assess asteroid collision risks and estimate potential damage — combining space science and AI for planetary defense.
 
-The **Asteroid Prediction** project aims to analyze and predict asteroid trajectories using scientific data and analytical models. This project provides insights into asteroid movements and potential Earth impact probabilities.
+---
 
-## Features
+##  Project Overview
 
-- Predict asteroid trajectories based on historical data.
-- Analyze potential asteroid collisions with Earth.
-- Provide visualization and reports of asteroid paths.
-- Fetch real-time asteroid data from reliable sources.
+Asteroid impacts pose significant risks to Earth, ranging from local destruction to global catastrophes. This project presents a machine learning-based system that:
 
-## Technologies Used
+- **Classifies whether an asteroid is hazardous**
+- **Predicts its diameter and potential impact severity**
 
-- **Python** (for data processing and analysis)
-- **Machine Learning Models** (for prediction and classification)
-- **Data Visualization Tools** (for graphical representation of results)
+By analyzing data from NASA’s Near-Earth Object (NEO) database, we apply supervised learning techniques to support disaster preparedness and planetary defense strategies.
 
-## Approach & Algorithms
+---
 
-Our approach integrates various computational techniques to ensure accurate asteroid predictions:
+##  Objectives
 
-- **Orbit Determination Algorithms**: Utilized to compute an asteroid's trajectory based on its past observations.
-- **Keplerian Motion Equations**: Used to estimate asteroid motion under gravitational forces.
-- **Machine Learning Models**:
-  - **XGBoost**: Used for high-accuracy regression and classification of asteroid impact probabilities.
-  - **Ridge Regression**: Applied to improve trajectory prediction by reducing overfitting.
-  - **Random Forest & Decision Trees**: Used for impact probability analysis based on historical data.
-- **Clustering Techniques**: Grouping asteroids based on size, velocity, and trajectory similarities.
+- Predict asteroid impact severity based on parameters like size, speed, and trajectory
+- Classify asteroids into hazardous and non-hazardous
+- Provide scientific insights for evacuation planning and asteroid deflection
+- Aid disaster preparedness using real-time risk assessment
 
-We collect and preprocess data from astronomical datasets, train predictive models, and validate results using known asteroid orbits.
+---
 
-## Installation
+##  Machine Learning Techniques
 
-1. **Clone the repository:**
+### 1. Hazardous Classification (Binary Classification)
 
-   ```bash
-   git clone https://github.com/APPANAHARINI1234/AsteroidPediction.git
-   cd AsteroidPrediction
-   ```
+- **Models**:  
+  - Logistic Regression  
+  - Decision Tree  
+  - Support Vector Machine (SVM)  
+  - XGBoost Classifier (**Best Accuracy: 99.43%**)
 
-2. **Install dependencies:**
+- **Evaluation Metrics**:  
+  Accuracy, Precision, Recall, F1-score, Confusion Matrix
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Asteroid Diameter Prediction (Regression)
 
-3. **Set up NASA API Key (if applicable):**
+- **Models**:  
+  - Ridge Regression (R² Score: **0.9837**)  
+  - K-Nearest Neighbors  
+  - Random Forest  
+  - Gradient Boosting (for missing value handling)
 
-   - Sign up at [NASA API Portal](https://api.nasa.gov/)
-   - Get an API Key and update the `.env` file.
+---
 
-## Usage
+##  Dataset Information
 
-- Run the program to analyze and predict asteroid movements.
+- **NASA NEO Dataset**  
+  - 4,687 entries  
+  - Features: diameter, mass, speed, trajectory, orbital elements
 
-## Contributors
+- **Asteroid Open Dataset**  
+  - 827,646 entries  
+  - Features: orbital parameters, perihelion distance, diameter
 
-- **Harini** - Project Lead
-- **Eda Durga Sri Lahari** 
-- **Tanu Sri Burra** 
-- **Ch Harshitha** 
+- **Sources**:  
+  - [NASA NEO](https://neo.jpl.nasa.gov/)
+  - [Kaggle Dataset](https://www.kaggle.com/datasets/brsdincer/asteroid-classification-for-hazardous-prediction)
 
-## Future Enhancements
+---
 
-- Implement advanced deep learning models for improved accuracy.
-- Develop an interactive dashboard for asteroid tracking.
-- Enhance visualization and reporting features.
+##  Tech Stack & Tools
+
+- **Language**: Python  
+- **Libraries**: scikit-learn, pandas, NumPy, seaborn, matplotlib, XGBoost  
+- **Environment**: Google Colab  
+
+
+---
+
+##  Evaluation Metrics Summary
+
+| Task                    | Metric     | Best Model         | Result     |
+|-------------------------|------------|---------------------|------------|
+| Hazard Classification   | Accuracy   | XGBoost             | 99.43%     |
+| Diameter Prediction     | R² Score   | Ridge Regression    | 0.9837     |
+
+---
+
+##  Project Workflow
+
+1. **Data Preprocessing**  
+   - Handle missing values, outliers, normalization, and encoding
+
+2. **Exploratory Data Analysis**  
+   - Heatmaps, box plots, scatter plots, PCA for dimensionality reduction
+
+3. **Model Training & Evaluation**  
+   - Used GridSearchCV & RandomizedSearchCV for hyperparameter tuning
+
+4. **Deployment (Planned)**  
+   - Real-time alert system with visualization
+
+---
+
+##  Future Scope
+
+- Integration with real-time NASA APIs  
+- Deep Learning (CNNs/LSTMs) for advanced predictions  
+- Web-based asteroid alert systems for public & researchers  
+- Geological & climate impact prediction models  
+- Validation with mission data (e.g., NASA’s DART, ESA’s Hera)
+
+---
+
+##  References
+
+- [Kaggle Dataset](https://www.kaggle.com/datasets/brsdincer/asteroid-classification-for-hazardous-prediction)  
+- [IEEE Research Paper](https://ieeexplore.ieee.org/document/10481589)  
+- [IOSR Journal](https://www.iosrjournals.org/iosr-jce/papers/Vol26-issue6/Ser-1/F2606013744.pdf)
+
+---
 
 
